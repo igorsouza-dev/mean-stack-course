@@ -25,7 +25,7 @@ gulp.task('app.js', function(){
     .pipe(babel({ presets: ['es2015'] }))
     .pipe(uglify())
     .pipe(concat('app.min.js'))
-    .pipe(gulp.dest('pulibc/assets/js'))
+    .pipe(gulp.dest('public/assets/js'))
 })
 
 gulp.task('app.assets', function(){
