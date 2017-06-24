@@ -3,32 +3,32 @@
 <section class="content">
     <div class="nav-tabs-custom" ng-controller="BillingCycleCtrl as bcCtrl">
         <ul class="nav nav-tabs">
-            <li class="active">
+            <li class="active" ng-if="bcCtrl.tabList">
                 <a href data-target="#tabList" data-toggle="tab">
                     <i class="fa fa-bars"></i> Lista
                 </a>
             </li>
-            <li>
+            <li ng-if="bcCtrl.tabCreate">
                 <a href data-target="#tabCreate" data-toggle="tab">
                     <i class="fa fa-plus"></i> Incluir
                 </a>
             </li>
-            <li>
+            <li ng-if="bcCtrl.tabUpdate">
                 <a href data-target="#tabUpdate" data-toggle="tab">
                     <i class="fa fa-pencil"></i> Alterar
                 </a>
             </li>
-            <li>
+            <li ng-if="bcCtrl.tabDelete">
                 <a href data-target="#tabDelete" data-toggle="tab">
                     <i class="fa fa-trash-o"></i> Excluir
                 </a>
             </li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane active" id="tabList" ng-include="'billingCycle/list.html'"></div>
-            <div class="tab-pane" id="tabCreate" ng-include="'billingCycle/form.html'"></div>
-            <div class="tab-pane" id="tabUpdate" ng-include="'billingCycle/form.html'"></div>
-            <div class="tab-pane" id="tabDelete" ng-include="'billingCycle/form.html'"></div>
+            <div class="tab-pane active" ng-if="bcCtrl.tabList" id="tabList" ng-include="'billingCycle/list.html'"></div>
+            <div class="tab-pane" ng-if="bcCtrl.tabCreate" id="tabCreate" ng-include="'billingCycle/form.html'"></div>
+            <div class="tab-pane" ng-if="bcCtrl.tabUpdate" id="tabUpdate" ng-include="'billingCycle/form.html'"></div>
+            <div class="tab-pane" ng-if="bcCtrl.tabDelete" id="tabDelete" ng-include="'billingCycle/form.html'"></div>
         </div>
     </div>
 </section>
