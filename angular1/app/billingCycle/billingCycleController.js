@@ -16,11 +16,11 @@
                vm.billingCycle = {credits: [{}], debts: [{}]};
                vm.billingCycles = response.data;
                vm.calculateValues();
-               tabs.show(vm, {tabList: true, tabCreate: true});
 
                $http.get(`${url}/count`).then(function (response) {
                    const qtd = response.data.value;
                    vm.pages = Math.ceil(qtd/10);
+                   tabs.show(vm, {tabList: true, tabCreate: true});
                })
             });
         };
