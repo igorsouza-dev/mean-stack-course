@@ -3,3 +3,4 @@ angular1/node_modules
 angular1/public
 *.log
 /.idea/
+/backend/.env
