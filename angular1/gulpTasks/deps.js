@@ -1,9 +1,9 @@
-const gulp = require('gulp')
-const uglify = require('gulp-uglify')
-const concat = require('gulp-concat')
-const uglifycss = require('gulp-uglifycss')
+const gulp = require('gulp');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const uglifycss = require('gulp-uglifycss');
 
-gulp.task('deps', ['deps.js', 'deps.css', 'deps.fonts'])
+gulp.task('deps', ['deps.js', 'deps.css', 'deps.fonts']);
 
 gulp.task('deps.js', function(){
     gulp.src([
@@ -18,8 +18,8 @@ gulp.task('deps.js', function(){
     ])
     .pipe(uglify())
     .pipe(concat('deps.min.js'))
-    .pipe(gulp.dest('public/assets/js'))
-})
+    .pipe(gulp.dest('public/assets/js'));
+});
 
 gulp.task('deps.css', function(){
     gulp.src([
@@ -31,13 +31,13 @@ gulp.task('deps.css', function(){
     ])
     .pipe(uglifycss({"uglyComments": true}))
     .pipe(concat('deps.min.css'))
-    .pipe(gulp.dest('public/assets/css'))
-})
+    .pipe(gulp.dest('public/assets/css'));
+});
 
 gulp.task('deps.fonts', function(){
     gulp.src([
         'node_modules/font-awesome/fonts/*.*',
         'node_modules/admin-lte/bootstrap/fonts/*.*'
     ])
-    .pipe(gulp.dest('public/assets/fonts'))
-})
+    .pipe(gulp.dest('public/assets/fonts'));
+});
